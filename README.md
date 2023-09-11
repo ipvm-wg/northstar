@@ -16,7 +16,7 @@ This text should be kept short, to the point, and as unambiguous as possible. De
 
 > Had the [Web] been proprietary, and in my total control, it would probably not have taken off. You can’t propose that something be a universal space and at the same time keep control of it.
 >
-> — Tim Berners-Lee
+> — Tim Berners-Lee, [FAQ][TBL FAQ]
 
 IPVM intends to do nothing less than connect all of the world's users and services. It can be thought of as "the HTTP of compute": open, interoperable, and everywhere. Following the model of the Web being the network of linked documents, IPVM is the network of linked computation. It allows anyone to permissionlessly tie into the network without prenegotiation.
 
@@ -39,18 +39,18 @@ IPVM means to provide:
 - Interfaces open to extension
 - First-class P2P payments
 
-It is application agnostic, but intends to abstract concerns of locality away from the programmer.
+IPVM is application agnostic, but intends to abstract concerns of locality away from the programmer.
 
 ## Antigoals
 
-IPVM will not attempt to develop into a:
+IPVM will _not_ attempt to develop into a:
 
-- replacement of IPFS internals
+- replacement or upgrade of IPFS internals
 - high level language for distributed applications
 - custom Wasm runtime
 - blockchain or other global consensus mechanism
 
-IPVM's focus is on execution, networking, data flow, and safety. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns.
+IPVM's focus is on execution, networking, data flow, and trust. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns.
 
 IPVM's primary focus is on machines and efficiency. Human-friendliness is important, but many human-oriented features should be pushed into higher layers. These may include high-level APIs, language integration, etc.
 
@@ -64,15 +64,17 @@ IPVM's primary focus is on machines and efficiency. Human-friendliness is import
 2. Open world / extension without prenegotiation
 3. Participatory: anyone can consume, serve, or both
 4. Learn into our strengths: IPVM is not k8s, so don't try to be
-5. Common tasks should be simple, and complex things should be possible
+5. Common things should be simple, and complex things should be possible
 6. Handle low-level details (networking, failure, trust) so that others can focus on business logic
 7. Build in layers with clear audiences (machine-to-machine, end-user, etc)
 
-When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers (UCAN), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described Unix and C as being like (helpful) computer viruses due to how they spread and integrate with other systems.
+When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described Unix and C as being like (helpful) computer viruses due to how they spread and integrate with other systems.
 
-IPVM simplifies distributed dataflow. It's tempting to think of it as moving single threaded local code to a logically centralized executor, but ultimately it's lowering the barrier of entry to distributed code.
+IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A disrtibuted context is fundamentally different from writing code for a single machine[^Lamport's Problem].
 
-[Homestar] is the reference implementation for the [IPVM] network. It is intended to be largely self-contained, and to run on as many systems as possible.
+[Homestar] is the reference implementation of the IPVM protocol. Homestar is intended to be largely self-contained, and to run on as many systems as possible.
+
+[^Lamport's Problem]: As Leslie Lamport says, "a distributed system is one in which the failure of a machine you have never heard of can cause your own machine to become unusable".
 
 ## Easy for Who?
 
@@ -135,5 +137,7 @@ For universal standards to work, everyone had to agree to use them. Tim and othe
 
 [Homestar]: https://github.com/ipvm-wg/homestar/
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
+[TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
+[UCAN]: https://github.com/ucan-wg
 [W3F Principles]: https://webfoundation.org/about/vision/history-of-the-web/
