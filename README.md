@@ -80,7 +80,7 @@ IPVM simplifies distributed dataflow. It's tempting to think of it as moving unc
 
 > Simplicity is a prerequisite for reliability
 > 
-> — Dijkstra
+> — Dijkstra, [How do we tell truths that might hurt?]
 
 > Every application has an inherent amount of complexity that cannot be removed or hidden. Instead, it must be dealt with, either in product development or in user interaction. 
 >
@@ -96,6 +96,7 @@ Per [Tesler's Law], solving these [common problems for the distributed setting][
 
 [Fallacies of Distributed Computing]: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 [Homestar]: https://github.com/ipvm-wg/homestar/
+[How do we tell truths that might hurt?]:https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html 
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
 [TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
