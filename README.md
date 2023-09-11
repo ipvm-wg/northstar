@@ -8,7 +8,7 @@
 
 This document is an informal description of IPVM's high-level goals. It forms the basis for reasoning about the project from first principles. It expected to only rarely change.
 
-This is meant to provide the basis for reasoning from first principles, but it is written in prose and not first-order logic. It "merely" provides a basis for aligning the people working on the project. Principles often contain some limited internal tension: use your best judgement and discuss with your peers when ambiguities inevitably arise.
+This is meant to provide the basis for reasoning from first principles, but it is written in prose and not first-order logic. It "merely" provides a basis for aligning the people working on the project. Principles often contain some limited internal tension: use your best judgment and discuss with your peers when ambiguities inevitably arise.
 
 This text should be kept short, to the point, and as unambiguous as possible. Define any project-specific jargon, avoid editorializing, and limit subtle language. Use diagrams and imagery where appropriate.
 
@@ -20,9 +20,9 @@ This text should be kept short, to the point, and as unambiguous as possible. De
 
 IPVM intends to do nothing less than connect all of the world's users and services. It can be thought of as "the HTTP of compute": open, interoperable, and everywhere. Following the model of the Web being the network of linked documents, IPVM is the network of linked computation. It allows anyone to permissionlessly tie into the network without prenegotiation.
 
-TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of such an approach: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substancially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
+TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of such an approach: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
 
-The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastrautcure were being codeveloped. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like Bittorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
+The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastrautcure were being co-developed. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like BitTorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
 
 # Audience
 
@@ -95,7 +95,7 @@ IPVM simplifies distributed dataflow. It's tempting to think of it as moving sin
 
 The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by abstracting away the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
 
-Per [Tesler's Law], solving these common problems for the distributed setting does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good librariers and tools.
+Per [Tesler's Law], solving these common problems for the distributed setting does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
 
 # Appendix
 

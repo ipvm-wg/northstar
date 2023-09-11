@@ -3,6 +3,7 @@ Acknowledgements
 Agoric
 Akiko
 Akiko's
+Antigoals
 Bacalhau
 Berners-Lee
 CBOR
@@ -39,6 +40,7 @@ OAuth
 OCapN
 PKI
 Philipp
+Pluggable
 PoPs
 Pre-Draft
 Proto
