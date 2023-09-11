@@ -20,7 +20,7 @@ This text should be kept short, to the point, and as unambiguous as possible. De
 
 IPVM intends to do nothing less than connect all of the world's users and services. It can be thought of as "the HTTP of compute": open, interoperable, and everywhere. Following the model of the Web being the network of linked documents, IPVM is the network of linked computation. It allows anyone to permissionlessly tie into the network without prenegotiation.
 
-TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of such an approach: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
+TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of [such an approach][WWW Foundation Principles]: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
 
 The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastructure were being co-developed. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like BitTorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
 
@@ -92,9 +92,9 @@ Per [Tesler's Law], solving these common problems for the distributed setting do
 
 # Appendix
 
-## Eight Fallacies of Distributed Computing
+## Fallacies of Distributed Computing
 
-IPVM intends to make computing more accessible in a distributed context. Recall the [8 Fallacies of Distributed Computing]:
+IPVM intends to make computing more accessible in a distributed context. Recall the [Fallacies of Distributed Computing]:
 
 1. The network is reliable
 2. Latency is zero
@@ -133,8 +133,11 @@ For universal standards to work, everyone had to agree to use them. Tim and othe
 
 <!-- Internal Links -->
 
+[WWW Foundation Principles]: #world-wide-web-foundations-principles
+
 <!-- External Links -->
 
+[Fallacies of Distributed Computing]: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 [Homestar]: https://github.com/ipvm-wg/homestar/
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
 [TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
