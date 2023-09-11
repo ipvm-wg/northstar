@@ -70,7 +70,7 @@ IPVM's primary focus is on machines and efficiency. Human-friendliness is import
 
 When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described Unix and C as being like (helpful) computer viruses due to how they spread and integrate with other systems.
 
-IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A disrtibuted context is fundamentally different from writing code for a single machine[^LamportsProblem].
+IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A distributed context is fundamentally different from writing code for a single machine[^LamportsProblem].
 
 [Homestar] is the reference implementation of the IPVM protocol. Homestar is intended to be largely self-contained, and to run on as many systems as possible.
 

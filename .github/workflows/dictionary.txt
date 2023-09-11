@@ -34,6 +34,8 @@ JWT
 JWT-encoded
 Krüger
 Lakhani
+Lamport
+LamportsProblem
 Lemmer-Webber
 Marsen
 OAuth
