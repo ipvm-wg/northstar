@@ -20,7 +20,7 @@ This text should be kept short, to the point, and as unambiguous as possible. De
 
 IPVM intends to do nothing less than connect all of the world's users and services. It can be thought of as "the HTTP of compute": open, interoperable, and everywhere. Following the model of the Web being the network of linked documents, IPVM is the network of linked computation. It allows anyone to permissionlessly tie into the network without prenegotiation.
 
-TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of [such an approach][WWW Foundation Principles]: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
+TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of [such an approach][W3F Principles]: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
 
 The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastructure were being co-developed. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like BitTorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
 
@@ -88,52 +88,9 @@ IPVM simplifies distributed dataflow. It's tempting to think of it as moving unc
 
 The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by abstracting away the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
 
-Per [Tesler's Law], solving these common problems for the distributed setting does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
-
-# Appendix
-
-## Fallacies of Distributed Computing
-
-IPVM intends to make computing more accessible in a distributed context. Recall the [Fallacies of Distributed Computing]:
-
-1. The network is reliable
-2. Latency is zero
-3. Bandwidth is infinite
-4. The network is secure
-5. Topology doesn't change
-6. There is one administrator
-7. Transport cost is zero
-8. The network is homogeneous
-
-Some strategies include: constraining expressivity to a safe subset (similar to the approach taken by [structured programming]), providing a robust standard library, and static analysis.
-
-## World Wide Web Foundation's Principles
-
-The early web was founded on the [following principles][W3F Principles]:
-
-### Decentralization
-
-No permission is needed from a central authority to post anything on the web, there is no central controlling node, and so no single point of failure … and no “kill switch”! This also implies freedom from indiscriminate censorship and surveillance.
-
-### Non-discrimination
-
-If I pay to connect to the internet with a certain quality of service, and you pay to connect with that or a greater quality of service, then we can both communicate at the same level. This principle of equity is also known as Net Neutrality.
-
-### Bottom-up design
-
-Instead of code being written and controlled by a small group of experts, it was developed in full view of everyone, encouraging maximum participation and experimentation.
-
-### Universality
-
-For anyone to be able to publish anything on the web, all the computers involved have to speak the same languages to each other, no matter what different hardware people are using; where they live; or what cultural and political beliefs they have. In this way, the web breaks down silos while still allowing diversity to flourish.
-
-### Consensus
-
-For universal standards to work, everyone had to agree to use them. Tim and others achieved this consensus by giving everyone a say in creating the standards, through a transparent, participatory process at W3C.
+Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
 
 <!-- Internal Links -->
-
-[WWW Foundation Principles]: #world-wide-web-foundations-principles
 
 <!-- External Links -->
 
