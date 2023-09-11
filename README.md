@@ -70,11 +70,11 @@ IPVM's primary focus is on machines and efficiency. Human-friendliness is import
 
 When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described Unix and C as being like (helpful) computer viruses due to how they spread and integrate with other systems.
 
-IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A disrtibuted context is fundamentally different from writing code for a single machine[^Lamport's Problem].
+IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A disrtibuted context is fundamentally different from writing code for a single machine[^LamportsProblem].
 
 [Homestar] is the reference implementation of the IPVM protocol. Homestar is intended to be largely self-contained, and to run on as many systems as possible.
 
-[^Lamport's Problem]: As Leslie Lamport says, "a distributed system is one in which the failure of a machine you have never heard of can cause your own machine to become unusable".
+[^LamportsProblem]: As Leslie Lamport says, "a distributed system is one in which the failure of a machine you have never heard of can cause your own machine to become unusable".
 
 ## Easy for Who?
 
@@ -141,3 +141,4 @@ For universal standards to work, everyone had to agree to use them. Tim and othe
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
 [UCAN]: https://github.com/ucan-wg
 [W3F Principles]: https://webfoundation.org/about/vision/history-of-the-web/
+[structured programming]: https://en.wikipedia.org/wiki/Structured_programming
