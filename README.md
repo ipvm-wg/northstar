@@ -22,21 +22,21 @@ IPVM intends to do nothing less than connect all of the world's users and servic
 
 TCP/IP and HTTP were successful for a number of reasons. Networking was always possible, but doing this from scratch for every application is infeasible. Hypertext provided a single mechanism for many applications to interconnect. Application agnosticism is a major pillar of such an approach: anything can run on this substrate, and it's easy to join. IPVM works equally well with traditional Cloud-based services as it does local-first compute and trustless architectures. To be successful, IPVM must have a path towards becoming substantially better than a pure Cloud architecture. It does not stand in opposition to the Cloud, but rather extends and contains it.
 
-The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastrautcure were being co-developed. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like BitTorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
+The internet is no longer purely client/server. Consumer devices are now significantly more powerful than when the LAMP stack and Cloud infrastructure were being co-developed. Devices today are heterogeneous: there are powerful browsers, heavy servers, microservices, edge PoPs, tiny IoT devices, smartphones, and commons networks like BitTorrent, IPFS, and blockchains. IPVM provides a way to tie applications together with robust invocation, routing, and trust layers. The volume of data that modern applications requires leads to a situation known as data gravity. Given the speed of light, the amount of data that we produce and modify grows faster than is possible to sync to all locations, and .
 
 # Audience
 
-IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like Lambda Step functions. IPVM itself is focused on machine-to-machine 
+IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like Lambda Step functions. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
 
 # Goals
 
 IPVM means to provide:
 
-- A task matchmaking network / marketplace
+- Task matchmaking network / marketplace
 - Pluggable execution engine
 - A trust layer (e.g. verifiable compute, encryption, PKI, capabilities)
 - Seamlessly tie together external services
-- Be open to extension
+- Interfaces open to extension
 - First-class P2P payments
 
 It is application agnostic, but intends to abstract concerns of locality away from the programmer.
@@ -54,16 +54,7 @@ IPVM's focus is on execution, networking, data flow, and safety. It is important
 
 IPVM's primary focus is on machines and efficiency. Human-friendliness is important, but many human-oriented features should be pushed into higher layers. These may include high-level APIs, language integration, etc.
 
-# Approach
-
-- Be network-efficient (lower bandwidth and latency)
-  - Efficiently move data-to-compute and compute-to-data
-  - Reuse both code and data
-- Open to participation
-- Enable integration of arbitrary services without prenegotiation
-- Abstract away common distributed systems challenges
-
-## Design Principles
+# Design Principles
 
 > You can prove anything you want by coldly logical reason — if you pick the proper postulates.
 > 
@@ -112,7 +103,7 @@ IPVM intends to make computing more accessible in a distributed context. Recall 
 7. Transport cost is zero
 8. The network is homogeneous
 
-Some strategies include: constraining expressivity to a safe subset (similar to [structured programming]), providing a robust standard library, and __________.
+Some strategies include: constraining expressivity to a safe subset (similar to the approach taken by [structured programming]), providing a robust standard library, and static analysis.
 
 ## World Wide Web Foundation's Principles
 
@@ -142,6 +133,7 @@ For universal standards to work, everyone had to agree to use them. Tim and othe
 
 <!-- External Links -->
 
+[Homestar]: https://github.com/ipvm-wg/homestar/
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
-[W3F Principles]: https://webfoundation.org/about/vision/history-of-the-web/
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
+[W3F Principles]: https://webfoundation.org/about/vision/history-of-the-web/
