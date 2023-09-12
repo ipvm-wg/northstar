@@ -1,5 +1,3 @@
-composable
-dataflow
 APIs
 Acknowledgements
 Agoric
@@ -74,10 +72,13 @@ atomicity
 auth
 backend
 base64url
+cacheable
 canonicalized
+composable
 cryptographic
 cryptographically
 d'Être
+dataflow
 de
 debuggable
 delegator
