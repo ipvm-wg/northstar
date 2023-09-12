@@ -48,10 +48,10 @@ IPVM means to provide:
 
 - Task matchmaking network / marketplace
 - A trust layer (e.g. verifiable compute, encryption, PKI, capabilities)
-- Seamlessly tie together external services
+- The ability to tie together external services seamlessly
 - Interfaces open to extension
 - First-class P2P payments
-- Run everywhere (servers, browsers, mobile applications, etc)
+- The ability to run everywhere (servers, browsers, mobile applications, etc)
 - Application agnostic
 - Abstract concerns of locality away from the programmer
 
