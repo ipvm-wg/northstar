@@ -28,34 +28,19 @@ Finally: the volume of data that modern applications requires leads to a situati
 
 # Audience
 
-IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like [AWS Lambda Step functions], [Fastly Compute@Edge], and [Temporal Cloud]. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
-
-A natural first step is to run on servers (similar to a FaaS), but 
-
-## Easy for Whom?
-
 > Every application has an inherent amount of complexity that cannot be removed or hidden. Instead, it must be dealt with, either in product development or in user interaction. 
 >
 > — [Tesler's Law]
 
-> I think this notion of nearness is really, really cool. [...] There's sort of the physical notion of being near. Right? Is something, you know, right there. And I think that's where the root of the word came from. You know, this is easy to obtain because it's nearby. It's not in the next town. [...]  we do sort of have, you know, our own hard drive or our own toolset, or it's sort of the ability to make things physically near by getting them through things like installers and stuff like that.
-> 
-> The second notion of nearness is something being near to our understanding, right, or in our current skill set. And I don't mean in this case near to our understanding meaning a capability. I mean literally near something that we already know. So the word in this case is about being familiar.
-> 
-> I think that, collectively, we are infatuated with these two notions of easy. We are just so self-involved in these two aspects; it's hurting us tremendously. Right? All we care about is, you know, can I get this instantly and start running it in five seconds? It could be this giant hairball that you got, but all you care is, you know, can you get it.
+> I think that, collectively, we are infatuated with these two notions of easy ["near-at-hand" and "in your current skill set"]. We are just so self-involved in these two aspects; it's hurting us tremendously.
 >
-> Hickey, [Simple Made Easy]
+> — Hickey, [Simple Made Easy]
 
-IPVM
+IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like [AWS Lambda Step functions], [Fastly Compute@Edge], and [Temporal Cloud]. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
 
+The word "simple" is often used interchangably with "easy" to mean making a common use case require little effort. This is goal directed: "easy for who or what?" IPVM aims to make distributed computing easy by [abstracting away][Fault Oblivious] the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce which kinds of services can be interconnected.
 
-
-
-
-
-The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by [abstracting away][Fault Oblivious] the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
-
-Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
+Standardizing on Wasm also highlights IPVM's core audience. At time of writing, there is comparatively little Wasm written; but the belief is that will change quickly. IPVM uses Wasm in its emphasis to  decompose compute into simpler units that are composable, cachable, reusable, and tractable for a distributed setting. Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] means that something else has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
 
 # Goals
 
