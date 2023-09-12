@@ -49,8 +49,9 @@ IPVM will _not_ attempt to develop into a:
 - high level language for distributed applications
 - custom Wasm runtime
 - blockchain or other global consensus mechanism
+- server orchestration
 
-IPVM's focus is on execution, networking, data flow, and trust. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns.
+IPVM's focus is on execution, networking, dataflow, and trust. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns.
 
 IPVM's primary focus is on machines and efficiency. Human-friendliness is important, but many human-oriented features should be pushed into higher layers. These may include high-level APIs, language integration, etc.
 
@@ -68,7 +69,7 @@ IPVM's primary focus is on machines and efficiency. Human-friendliness is import
 6. Handle low-level details (networking, failure, trust) so that others can focus on business logic
 7. Build in layers with clear audiences (machine-to-machine, end-user, etc)
 
-When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described Unix and C as being like (helpful) computer viruses due to how they spread and integrate with other systems.
+When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described [Unix and C as being like (helpful) computer viruses][Modles of Software Acceptance] due to how they spread and integrate with other systems.
 
 IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A distributed context is fundamentally different from writing code for a single machine[^LamportsProblem].
 
@@ -86,7 +87,7 @@ IPVM simplifies distributed dataflow. It's tempting to think of it as moving unc
 >
 > — [Tesler's Law]
 
-The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by abstracting away the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
+The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by [abstracting away][Fault Oblivious] the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
 
 Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
 
@@ -95,8 +96,10 @@ Per [Tesler's Law], solving these [common problems for the distributed setting][
 <!-- External Links -->
 
 [Fallacies of Distributed Computing]: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
+[Fault Oblivious]: https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CS302/Fun/fault-oblivious.html 
 [Homestar]: https://github.com/ipvm-wg/homestar/
 [How do we tell truths that might hurt?]:https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html 
+[Models of Software Acceptance]: https://dreamsongs.com/Files/AcceptanceModels.pdf
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
 [TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
