@@ -33,7 +33,6 @@ IPVM is intended for general distributed computation, but excels at tasks that w
 IPVM means to provide:
 
 - Task matchmaking network / marketplace
-- Pluggable execution engine
 - A trust layer (e.g. verifiable compute, encryption, PKI, capabilities)
 - Seamlessly tie together external services
 - Interfaces open to extension
@@ -69,7 +68,7 @@ IPVM's primary focus is on machines and efficiency. Human-friendliness is import
 6. Handle low-level details (networking, failure, trust) so that others can focus on business logic
 7. Build in layers with clear audiences (machine-to-machine, end-user, etc)
 
-When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described [Unix and C as being like (helpful) computer viruses][Modles of Software Acceptance] due to how they spread and integrate with other systems.
+When in doubt, optimize for proliferation. Get implementations into many hands, find services that already tie-in at the RPC and trust layers ([UCAN]), and avoid having the core IPVM team become a bottleneck for extending the network. [Richard Gabriel] described [Unix and C as being like (helpful) computer viruses][Models of Software Acceptance] due to how they spread and integrate with other systems.
 
 IPVM simplifies distributed dataflow. It's tempting to think of it as moving unconstrained centralized code to a logically centralized executor, but IPVM actually lowers the barrier of entry to distributed code. A distributed context is fundamentally different from writing code for a single machine[^LamportsProblem].
 
