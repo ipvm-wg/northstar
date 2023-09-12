@@ -16,7 +16,7 @@ This text should be kept short, to the point, and as unambiguous as possible. De
 
 > Had the [Web] been proprietary, and in my total control, it would probably not have taken off. You can’t propose that something be a universal space and at the same time keep control of it.
 >
-> — Tim Berners-Lee, [FAQ][TBL FAQ]
+> — Berners-Lee, [FAQ][TBL FAQ]
 
 IPVM intends to do nothing less than connect all of the world's users and services. It can be thought of as "the HTTP of compute": open, interoperable, and everywhere. Following the model of the Web being the network of linked documents, IPVM is the network of linked computation. It allows anyone to permissionlessly tie into the network without prenegotiation.
 
@@ -30,6 +30,33 @@ Finally: the volume of data that modern applications requires leads to a situati
 
 IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like [AWS Lambda Step functions], [Fastly Compute@Edge], and [Temporal Cloud]. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
 
+A natural first step is to run on servers (similar to a FaaS), but 
+
+## Easy for Whom?
+
+> Every application has an inherent amount of complexity that cannot be removed or hidden. Instead, it must be dealt with, either in product development or in user interaction. 
+>
+> — [Tesler's Law]
+
+> I think this notion of nearness is really, really cool. [...] There's sort of the physical notion of being near. Right? Is something, you know, right there. And I think that's where the root of the word came from. You know, this is easy to obtain because it's nearby. It's not in the next town. [...]  we do sort of have, you know, our own hard drive or our own toolset, or it's sort of the ability to make things physically near by getting them through things like installers and stuff like that.
+> 
+> The second notion of nearness is something being near to our understanding, right, or in our current skill set. And I don't mean in this case near to our understanding meaning a capability. I mean literally near something that we already know. So the word in this case is about being familiar.
+> 
+> I think that, collectively, we are infatuated with these two notions of easy. We are just so self-involved in these two aspects; it's hurting us tremendously. Right? All we care about is, you know, can I get this instantly and start running it in five seconds? It could be this giant hairball that you got, but all you care is, you know, can you get it.
+>
+> Hickey, [Simple Made Easy]
+
+IPVM
+
+
+
+
+
+
+The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by [abstracting away][Fault Oblivious] the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
+
+Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
+
 # Goals
 
 IPVM means to provide:
@@ -39,8 +66,9 @@ IPVM means to provide:
 - Seamlessly tie together external services
 - Interfaces open to extension
 - First-class P2P payments
-
-IPVM is application agnostic, but intends to abstract concerns of locality away from the programmer.
+- Run everywhere (servers, browsers, mobile applications, etc)
+- Application agnostic
+- Abstract concerns of locality away from the programmer
 
 ## Antigoals
 
@@ -52,9 +80,7 @@ IPVM will _not_ attempt to develop into a:
 - blockchain or other global consensus mechanism
 - a web server framework
 
-IPVM's focus is on execution, networking, dataflow, and trust. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns.
-
-IPVM's primary focus is on machines and efficiency. Human-friendliness is important, but many human-oriented features should be pushed into higher layers. These may include high-level APIs, language integration, etc.
+IPVM focuses on execution, networking, dataflow, and trust. It is important to make the internals debuggable and friendly where possible, but only when it doesn't conflict with the core aim at this layer: efficiency and abstracting away distributed systems concerns. Human-friendliness is important, but many human-oriented features should be pushed into higher layers. These may include high-level APIs, language integration, etc.
 
 # Design Principles
 
@@ -78,25 +104,10 @@ IPVM simplifies distributed dataflow. It's tempting to think of it as moving unc
 
 [^LamportsProblem]: As Leslie Lamport says, "a distributed system is one in which the failure of a machine you have never heard of can cause your own machine to become unusable".
 
-## Easy for Who?
-
-> Simplicity is a prerequisite for reliability
-> 
-> — Dijkstra, [How do we tell truths that might hurt?]
-
-> Every application has an inherent amount of complexity that cannot be removed or hidden. Instead, it must be dealt with, either in product development or in user interaction. 
->
-> — [Tesler's Law]
-
-The word "simple" is often used to mean "to make a common use case easy". This is goal directed: "simple for who or what?" IPVM aims to make distributed computing easy by [abstracting away][Fault Oblivious] the common challenges of that context. In the same way that TCP/IP handles machine-to-machine networking concerns in an application agnostic way, IPVM doesn't attempt to enforce what can be run on it.
-
-Per [Tesler's Law], solving these [common problems for the distributed setting][Fallacies of Distributed Computing] does mean that something has to be traded off. Running arbitrary code designed for local-only execution doesn't work in these settings. Much like depending on techniques like read-your-writes or CRDTs at the data layer, IPVM requires low-level implementations use certain tools and techniques. Following the tactic of "do one thing well", concerns of providing familiarity is pushed above the network layer to good libraries and tools.
-
 <!-- Internal Links -->
 
 <!-- External Links -->
 
-[Temporal Cloud]: https://temporal.io/
 [AWS Lambda Step functions]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-stepfunctions.html
 [Fallacies of Distributed Computing]: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 [Fastly Compute@Edge]: https://docs.fastly.com/products/compute-at-edge
@@ -105,7 +116,9 @@ Per [Tesler's Law], solving these [common problems for the distributed setting][
 [How do we tell truths that might hurt?]:https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html 
 [Models of Software Acceptance]: https://dreamsongs.com/Files/AcceptanceModels.pdf
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
+[Simple Made Easy]: https://www.infoq.com/presentations/Simple-Made-Easy/
 [TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
+[Temporal Cloud]: https://temporal.io/
 [Tesler's Law]: https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity
 [UCAN]: https://github.com/ucan-wg
 [W3F Principles]: https://webfoundation.org/about/vision/history-of-the-web/
