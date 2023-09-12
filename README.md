@@ -28,7 +28,7 @@ Finally: the volume of data that modern applications requires leads to a situati
 
 # Audience
 
-IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like [Lambda Step functions]. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
+IPVM is intended for general distributed computation, but excels at tasks that would be found in systems like [AWS Lambda Step functions], [Fastly Compute@Edge], and [Temporal Cloud]. The IPVM network itself is focused on machine-to-machine interaction — where each node acts as the user's agent — but is not expected to be interacted with directly when on the happy path.
 
 # Goals
 
@@ -96,11 +96,13 @@ Per [Tesler's Law], solving these [common problems for the distributed setting][
 
 <!-- External Links -->
 
+[Temporal Cloud]: https://temporal.io/
+[AWS Lambda Step functions]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-stepfunctions.html
 [Fallacies of Distributed Computing]: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
+[Fastly Compute@Edge]: https://docs.fastly.com/products/compute-at-edge
 [Fault Oblivious]: https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CS302/Fun/fault-oblivious.html 
 [Homestar]: https://github.com/ipvm-wg/homestar/
 [How do we tell truths that might hurt?]:https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html 
-[Lambda Step functions]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-stepfunctions.html
 [Models of Software Acceptance]: https://dreamsongs.com/Files/AcceptanceModels.pdf
 [Richard Gabriel]: https://en.wikipedia.org/wiki/Richard_P._Gabriel
 [TBL FAQ]:https://www.w3.org/People/Berners-Lee/FAQ.html 
